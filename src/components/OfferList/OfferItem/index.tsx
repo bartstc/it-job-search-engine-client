@@ -35,7 +35,7 @@ const OfferItem = ({
   }
 }: Props) => {
   return (
-    <Link to={`offer/${offerId}`}>
+    <Link to={`/${offerId}`}>
       <OfferItemWrapper technology={technology}>
         <Top>
           <OfferItemTitle>{title}</OfferItemTitle>

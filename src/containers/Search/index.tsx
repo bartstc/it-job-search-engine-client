@@ -1,39 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 
 import { SearchWrapper, SearchOverview, MapContainer } from "./Search.styles";
 
 import { Map } from "components/Map";
-import { FetchingSpinner } from "components/Spinners/FetchingSpinner";
 
 import { fakePin } from "modules/offers/constants/fakePin";
-import { Offer } from "modules/offers/types/Offer";
-import { getOffers } from "modules/offers/api";
 
-import { OfferPreview } from "./OfferPreview";
+import { OfferContent } from "./OfferContent";
 import { SearchPanel } from "./SearchPanel";
 
 const Search = () => {
-  const [offers, setOffers] = useState<Offer[] | null>(null);
-
-  useEffect(() => {
-    const fetchOffers = async () => {
-      const offers = await getOffers();
-      setOffers(offers);
-    };
-    fetchOffers().catch((err) => {
-      console.log(err);
-    });
-  }, []);
-
-  if (!offers) {
-    return <FetchingSpinner />;
-  }
-
   return (
     <SearchWrapper data-testid="search-wrapper">
       <SearchPanel />
       <SearchOverview>
-        <OfferPreview offers={offers} />
+        <OfferContent />
         <MapContainer>
           <Map pins={[fakePin]} />
         </MapContainer>

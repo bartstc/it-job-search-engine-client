@@ -12,7 +12,7 @@ const UnauthApp = () => {
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Route exact path="/" component={Search} />
+          <Route path="" component={Search} />
           <Route exact path="/signin" component={SignInForm} />
           <Route exact path="/signup" component={SignUpForm} />
           <Route component={NotFound} />
