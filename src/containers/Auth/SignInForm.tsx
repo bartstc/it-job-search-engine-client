@@ -41,7 +41,7 @@ const SignInForm = () => {
             .catch(() => {
               showNotification({
                 type: NotificationType.Error,
-                message: "serverError",
+                message: "wrongCredentials",
               });
               actions.setSubmitting(false);
             });

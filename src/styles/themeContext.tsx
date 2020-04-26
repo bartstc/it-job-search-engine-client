@@ -14,10 +14,17 @@ type ThemeProviderProps = {
 };
 
 const ThemeProvider = ({ children }: ThemeProviderProps) => {
-  const [theme, setTheme] = useState(lightTheme);
+  const themeName = localStorage.getItem("themeName") ?? "light";
+  const [theme, setTheme] = useState(
+    themeName === "light" ? lightTheme : darkTheme
+  );
 
   const toggleTheme = () => {
     theme.name === "light" ? setTheme(darkTheme) : setTheme(lightTheme);
+    localStorage.setItem(
+      "themeName",
+      theme.name === "light" ? "dark" : "light"
+    );
   };
 
   return (

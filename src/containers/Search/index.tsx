@@ -3,14 +3,14 @@ import React, { useEffect, useState } from "react";
 import { SearchWrapper, SearchOverview, MapContainer } from "./Search.styles";
 
 import { Map } from "components/Map";
+import { FetchingSpinner } from "components/Spinners/FetchingSpinner";
+
+import { fakePin } from "modules/offers/constants/fakePin";
+import { Offer } from "modules/offers/types/Offer";
+import { getOffers } from "modules/offers/api";
 
 import { OfferPreview } from "./OfferPreview";
 import { SearchPanel } from "./SearchPanel";
-
-import { fakePin } from "../../modules/offers/constants/fakePin";
-import { Offer } from "../../modules/offers/types/Offer";
-import { getOffers } from "../../modules/offers/api";
-import { FetchingSpinner } from "../../components/Spinners/FetchingSpinner";
 
 const Search = () => {
   const [offers, setOffers] = useState<Offer[] | null>(null);
