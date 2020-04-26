@@ -1,0 +1,15 @@
+import styled from "styled-components";
+
+export const OfferPreviewWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+
+  ${props => props.theme.media.laptop} {
+    flex: 0.6;
+    padding: 0 .15em 0 1.1em;
+  }
+
+  ${props => props.theme.media.laptopL} {
+    flex: 0.5;
+  }
+`;

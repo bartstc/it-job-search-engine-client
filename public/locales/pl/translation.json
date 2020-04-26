@@ -1,0 +1,92 @@
+{
+  "Layout": {
+    "links": {
+      "home": "Strona startowa",
+      "signIn": "Zaloguj się",
+      "signUp": "Rejestracja",
+      "addedOffers": "Dodane oferty",
+      "newOffer": "Dodaj nową ofertę",
+      "logout": "Wyloguj",
+      "dashboard": "Panel"
+    },
+    "header": {
+      "logoTitle": "Twoja wyszukiwarka pracy IT",
+      "signInBtn": "Zaloguj się",
+      "signUpBtn": "Rejestracja",
+      "userLogin": "Zalogowany jako"
+    }
+  },
+  "States": {
+    "ErrorState": {
+      "title": "Błąd",
+      "subtitle": "Coś poszło nie tak. Skontaktuj się z nami: 333 444 555"
+    }
+  },
+  "Search": {
+    "filterButtons": {
+      "location": "Lokalizacja",
+      "salary": "Pensja",
+      "experience": "Poziom dośw.",
+      "technology": "Technologie"
+    }
+  },
+  "Auth": {
+    "schema": {
+      "required": "Pole jest wymagane",
+      "min": "Przynajmnie 4 znaki",
+      "max": "Maksymalnie 255 znaków",
+      "email": "Niepoprawny adres email",
+      "passwordTooWeak": "Hasło zbyt słabe"
+    },
+    "formLabels": {
+      "signInTitle": "Zaloguj się",
+      "signUpTitle": "Zarejestruj się",
+      "loginLabel": "Wprowadź login",
+      "emailLabel": "Wprowadź email",
+      "passwordLabel": "Wprowadź hasło",
+      "signUpQuestion": "Nie masz jeszcze konta?",
+      "signInQuestion": "Posiadasz już konto?"
+    }
+  },
+  "Dashboard": {
+    "schema": {
+      "required": "Pole jest wymagane",
+      "max": "Maksymalnie 255 znaków",
+      "maxDescription": "Maksymalnie 1000 znaków"
+    },
+    "SelectContext": {
+      "title": "Wybierz kontekst",
+      "selectDeveloper": "Developer",
+      "selectCompany": "Firma"
+    },
+    "DeveloperContextForm": {
+      "title": "Utwórz kontekst developera",
+      "subTitle": "Zaakceptuj",
+      "formLabels": {
+        "firstNameLabel": "Wprowadź imię",
+        "lastNameLabel": "Wprowadź nazwisko",
+        "ageLabel": "Wprowadź wiek"
+      }
+    },
+    "CompanyContextForm": {
+      "title": "Utwórz kontekst firmy",
+      "subTitle": "Zaakceptuj",
+      "formLabels": {
+        "nameLabel": "Wprowadź nazwę firmy",
+        "descriptionLabel": "Wprowadź opis",
+        "sizeLabel": "Wprowadź rozmiar firmy"
+      }
+    }
+  },
+  "ErrorBoundary": {
+    "userPermissions": "Nierozpoznany kontekst"
+  },
+  "Exceptions": {
+    "authenticationTokenMissing": "Brak autoryzacji",
+    "emailOrLoginTaken": "Email lub login jest już zajęty",
+    "wrongCredentials": "Wprowadzono niepoprawne dane",
+    "serverError": "Coś poszło nie tak",
+    "usernameInUse": "Wprowadzony login zajęty",
+    "emailInUse": "Wprowadzony email zajęty"
+  }
+}

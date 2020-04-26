@@ -1,0 +1,92 @@
+{
+  "Layout": {
+    "links": {
+      "home": "Home",
+      "signIn": "Sign in",
+      "signUp": "Sign up",
+      "addedOffers": "Added offers",
+      "newOffer": "Add new offer",
+      "logout": "Logout",
+      "dashboard": "Dashboard"
+    },
+    "header": {
+      "logoTitle": "Your IT search engine",
+      "signInBtn": "Sign In",
+      "signUpBtn": "Register",
+      "userLogin": "Logged as"
+    }
+  },
+  "States": {
+    "ErrorState": {
+      "title": "Error",
+      "subtitle": "Something goes wrong. Contact as: 333 444 555"
+    }
+  },
+  "Search": {
+    "filterButtons": {
+      "location": "Location",
+      "salary": "Salary",
+      "experience": "Exp. level",
+      "technology": "Technology"
+    }
+  },
+  "Auth": {
+    "schema": {
+      "required": "Field is required",
+      "min": "Must have at least 4 characters",
+      "max": "Must be shorter than 255",
+      "email": "Must be valid email",
+      "passwordTooWeak": "Password too weak"
+    },
+    "formLabels": {
+      "signInTitle": "Sign In",
+      "signUpTitle": "Sign Up",
+      "loginLabel": "Enter login",
+      "emailLabel": "Enter email",
+      "passwordLabel": "Enter password",
+      "signUpQuestion": "Do not have an account?",
+      "signInQuestion": "Do you already have an account?"
+    }
+  },
+  "Dashboard": {
+    "schema": {
+      "required": "Field is required",
+      "max": "Must be shorter than 255",
+      "maxDescription": "Must be shorter than 1000"
+    },
+    "SelectContext": {
+      "title": "Select context",
+      "selectDeveloper": "Developer",
+      "selectCompany": "Company"
+    },
+    "DeveloperContextForm": {
+      "title": "Create developer context",
+      "subTitle": "Accept",
+      "formLabels": {
+        "firstNameLabel": "Enter first name",
+        "lastNameLabel": "Enter last name",
+        "ageLabel": "Enter age"
+      }
+    },
+    "CompanyContextForm": {
+      "title": "Create company context",
+      "subTitle": "Accept",
+      "formLabels": {
+        "nameLabel": "Enter company name",
+        "descriptionLabel": "Enter description",
+        "sizeLabel": "Enter size"
+      }
+    }
+  },
+  "ErrorBoundary": {
+    "userPermissions": "Unrecognized context"
+  },
+  "Exceptions": {
+    "authenticationTokenMissing": "Authentication token missing",
+    "emailOrLoginTaken": "Email or username already taken",
+    "wrongCredentials": "Wrong credentials provided",
+    "serverError": "Something goes wrong",
+    "usernameInUse": "Provided username already taken",
+    "emailInUse": "Provided email already taken"
+  }
+}

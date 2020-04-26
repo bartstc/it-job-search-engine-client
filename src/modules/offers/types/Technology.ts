@@ -1,0 +1,17 @@
+export enum Technology {
+  All = "all",
+  Javascript = "javascript",
+  Nodejs = "nodejs",
+  Html5 = "html5",
+  Ruby = "ruby",
+  Python = "python",
+  Dotnet = "dotnet",
+  C = "c",
+  Mobile = "mobile",
+  Testing = "testing",
+  Devops = "devops",
+  Game = "game",
+  Security = "security",
+  Data = "data",
+  Other = "other",
+}

@@ -10,10 +10,27 @@
     "@types/node": "^12.0.0",
     "@types/react": "^16.9.0",
     "@types/react-dom": "^16.9.0",
+    "axios": "^0.19.2",
+    "formik": "^2.1.4",
+    "i18next": "^19.4.1",
+    "i18next-browser-languagedetector": "^4.0.2",
+    "i18next-xhr-backend": "^3.2.2",
+    "jwt-decode": "^2.2.0",
+    "lodash": "^4.17.15",
+    "mapbox-gl": "^1.9.1",
+    "moment": "^2.24.0",
+    "prettier": "^2.0.4",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
+    "react-error-boundary": "^1.2.5",
+    "react-i18next": "^11.3.4",
+    "react-map-gl": "^5.2.3",
+    "react-router-dom": "^5.1.2",
     "react-scripts": "3.4.1",
-    "typescript": "~3.7.2"
+    "styled-components": "^5.1.0",
+    "typescript": "~3.7.2",
+    "use-react-router": "^1.0.7",
+    "yup": "^0.28.3"
   },
   "scripts": {
     "start": "react-scripts start",
@@ -24,6 +41,7 @@
   "eslintConfig": {
     "extends": "react-app"
   },
+  "proxy": "http://localhost:4000",
   "browserslist": {
     "production": [
       ">0.2%",
@@ -35,5 +53,14 @@
       "last 1 firefox version",
       "last 1 safari version"
     ]
+  },
+  "devDependencies": {
+    "@types/axios": "^0.14.0",
+    "@types/jwt-decode": "^2.2.1",
+    "@types/lodash": "^4.14.149",
+    "@types/react-map-gl": "^5.2.2",
+    "@types/react-router-dom": "^5.1.4",
+    "@types/styled-components": "^5.0.1",
+    "@types/yup": "^0.26.35"
   }
 }
