@@ -7,7 +7,7 @@ export const getOffers = () =>
     url: "offers?technology=all",
   });
 
-export const getOffer = (offerId: string) =>
+export const getOffer = (_: string, offerId: string) =>
   client<Offer>({
     url: `offers/offer/${offerId}`,
   });

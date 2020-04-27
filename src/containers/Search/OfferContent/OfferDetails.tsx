@@ -1,10 +1,7 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import useRouter from "use-react-router";
 
-import { Offer } from "modules/offers/types/Offer";
-import { getOffer } from "modules/offers/api";
-
-import { FetchingSpinner } from "components/Spinners/FetchingSpinner";
+import { useOffer } from "modules/offers/hooks";
 
 import { OfferDetailsWrapper } from "./OfferContent.styles";
 
@@ -13,23 +10,9 @@ const OfferDetails = () => {
     match: { params },
   } = useRouter<{ offerId: string }>();
 
-  const [offer, setOffer] = useState<Offer | null>(null);
+  const { data } = useOffer(params.offerId);
 
-  useEffect(() => {
-    const fetchOffer = async () => {
-      const offer = await getOffer(params.offerId);
-      setOffer(offer);
-    };
-    fetchOffer().catch((err) => {
-      console.log(err);
-    });
-  }, [params.offerId]);
-
-  if (!offer) {
-    return <FetchingSpinner />;
-  }
-
-  console.log(offer);
+  console.log(data);
 
   return (
     <OfferDetailsWrapper>
