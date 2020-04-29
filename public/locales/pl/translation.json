@@ -83,10 +83,14 @@
   },
   "Exceptions": {
     "authenticationTokenMissing": "Brak autoryzacji",
-    "emailOrLoginTaken": "Email lub login jest już zajęty",
-    "wrongCredentials": "Wprowadzono niepoprawne dane",
+    "emailAlreadyTaken": "Email lub login jest już zajęty",
+    "usernameAlreadyTaken": "Email lub login jest już zajęty",
     "serverError": "Coś poszło nie tak",
     "usernameInUse": "Wprowadzony login zajęty",
-    "emailInUse": "Wprowadzony email zajęty"
+    "emailInUse": "Wprowadzony email zajęty",
+    "wrongCredentialsProvided": "Wprowadzono niepoprawne dane",
+    "password": {
+      "doesntMeetCriteriaRequired8Chars": "Wprowadzono niepoprawne dane"
+    }
   }
 }

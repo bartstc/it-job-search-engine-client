@@ -11,7 +11,7 @@ const AuthApp = () => {
     <BrowserRouter>
       <Layout>
         <Switch>
-          <Route path="/search" component={Search} />
+          <Route path="" component={Search} />
           <Route component={NotFound} />
         </Switch>
       </Layout>

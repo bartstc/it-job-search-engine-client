@@ -83,10 +83,14 @@
   },
   "Exceptions": {
     "authenticationTokenMissing": "Authentication token missing",
-    "emailOrLoginTaken": "Email or username already taken",
-    "wrongCredentials": "Wrong credentials provided",
+    "emailAlreadyTaken": "Email or username already taken",
+    "usernameAlreadyTaken": "Email or username already taken",
     "serverError": "Something goes wrong",
     "usernameInUse": "Provided username already taken",
-    "emailInUse": "Provided email already taken"
+    "emailInUse": "Provided email already taken",
+    "wrongCredentialsProvided": "Wrong credentials provided",
+    "password": {
+      "doesntMeetCriteriaRequired8Chars": "Wrong credentials provided"
+    }
   }
 }

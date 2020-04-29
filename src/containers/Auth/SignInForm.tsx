@@ -10,6 +10,7 @@ import { useAuthDispatch } from "modules/users/contexts/authContext";
 
 import { Input } from "components/Input";
 import { SlimForm } from "components/Forms";
+import { useMutation } from "components/Suspense";
 
 import { useNotification } from "hooks/useNotification";
 
@@ -25,26 +26,30 @@ const SignInForm = () => {
   const { showNotification } = useNotification();
   const { login } = useAuthDispatch();
 
+  const [mutate] = useMutation(signInUser, {
+    onError: (error) => {
+      showNotification({
+        type: NotificationType.Error,
+        message: error.response?.data.signature,
+      });
+    },
+  });
+
   return (
     <AuthWrapper>
       <Formik
         initialValues={initValues}
         validationSchema={signInValidationSchema}
-        onSubmit={(values, actions) => {
+        onSubmit={async (values, actions) => {
           actions.setSubmitting(true);
 
-          signInUser(values)
-            .then(({ token }) => {
-              actions.setSubmitting(false);
-              login(token);
-            })
-            .catch(() => {
-              showNotification({
-                type: NotificationType.Error,
-                message: "wrongCredentials",
-              });
-              actions.setSubmitting(false);
-            });
+          try {
+            const { token } = await mutate(values);
+            actions.setSubmitting(false);
+            login(token);
+          } catch {
+            actions.setSubmitting(false);
+          }
         }}
       >
         {({ errors, touched, isSubmitting, isValid }) => {

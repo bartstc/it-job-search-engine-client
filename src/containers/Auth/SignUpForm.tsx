@@ -11,6 +11,7 @@ import { signUpUser } from "modules/users/api";
 
 import { Input } from "components/Input";
 import { SlimForm } from "components/Forms";
+import { useMutation } from "components/Suspense";
 
 import { useNotification } from "hooks/useNotification";
 
@@ -28,26 +29,32 @@ const SignUpForm = () => {
   const { history } = useRouter();
   const { showNotification } = useNotification();
 
+  const [mutate] = useMutation(signUpUser, {
+    onError: (error) => {
+      showNotification({
+        type: NotificationType.Error,
+        message: error.response?.data.signature,
+      });
+    },
+    onSuccess: () => {
+      history.push("signin");
+    },
+  });
+
   return (
     <AuthWrapper>
       <Formik
         initialValues={initValues}
         validationSchema={signUpValidationSchema}
-        onSubmit={(values, actions) => {
+        onSubmit={async (values, actions) => {
           actions.setSubmitting(true);
 
-          signUpUser(values)
-            .then(() => {
-              actions.setSubmitting(false);
-              history.push("signin");
-            })
-            .catch(() => {
-              showNotification({
-                type: NotificationType.Error,
-                message: "serverError",
-              });
-              actions.setSubmitting(false);
-            });
+          try {
+            await mutate(values);
+            actions.setSubmitting(false);
+          } catch {
+            actions.setSubmitting(false);
+          }
         }}
       >
         {({ errors, touched, isSubmitting, isValid }) => {

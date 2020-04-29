@@ -21,6 +21,8 @@ const Notification = () => {
     return () => clearTimeout(timer);
   }, [time, setNotificationState, active]);
 
+  const notification = message ? t(`Exceptions.${message}`) : "";
+
   return (
     <StyledNotification
       data-testid="notification"
@@ -28,9 +30,7 @@ const Notification = () => {
       type={type || NotificationType.Info}
       onClick={() => setNotificationState({ active: false })}
     >
-      <NotificationMessage>
-        {t(`Exceptions.${message ?? "serverError"}`)}
-      </NotificationMessage>
+      <NotificationMessage>{notification}</NotificationMessage>
     </StyledNotification>
   );
 };
