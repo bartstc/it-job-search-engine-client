@@ -14,10 +14,11 @@ export const OfferDetailsWrapper = styled.li<OfferDetailsWrapperProps>`
   width: 100%;
   height: 98.5%;
   display: flex;
+  flex-direction: column;
   justify-content: space-between;
   position: relative;
   margin-bottom: 0.6em;
-  padding: 0.45em 0.45em 0.45em 1.3em;
+  padding: 1em 0.45em 1em 1.3em;
   box-shadow: 1px 2px 3px -1px ${(props) => props.theme.colors.grayColor};
   background: ${(props) => props.theme.colors.secondaryBgColor};
   overflow-y: scroll;
@@ -69,14 +70,14 @@ export const Header = styled.header`
 `;
 
 export const OfferTitle = styled.h2`
-  font-size: 1.05rem;
+  font-size: 1.1rem;
   line-height: 1.45em;
   color: ${(props) => props.theme.colors.primaryColor};
   font-weight: ${(props) => props.theme.fontWeight.bold};
   margin-bottom: 0.35em;
 
   ${(props) => props.theme.media.tablet} {
-    margin-bottom: .3em;
+    margin-bottom: 0.3em;
     font-size: 1.9rem;
     line-height: 1.25em;
     flex: 0.7;
@@ -142,15 +143,14 @@ export const Hr = styled.div`
 `;
 
 export const SectionTitle = styled.h3`
-  font-size: 0.9rem;
+  font-size: 1rem;
   line-height: 1em;
   color: ${(props) => props.theme.colors.primaryColor};
   font-weight: ${(props) => props.theme.fontWeight.semiBold};
-  margin-bottom: 0.15em;
-  margin-top: 0.45em;
+  margin-bottom: 0.45em;
+  margin-top: 0.6em;
 
   ${(props) => props.theme.media.tablet} {
-    margin-bottom: 0.35em;
     margin-top: 0.8em;
     font-size: 1.1rem;
     line-height: 1.15em;
@@ -161,8 +161,9 @@ export const SectionTitle = styled.h3`
 export const OfferTags = styled.ul`
   font-weight: ${(props) => props.theme.fontWeight.light};
   color: ${(props) => props.theme.colors.secondaryBgColor};
-  display: none;
-
+  display: flex;
+  flex-wrap: wrap;
+  
   ${(props) => props.theme.media.tablet} {
     display: flex;
     flex-wrap: wrap;
@@ -180,7 +181,12 @@ export const OfferTag = styled.li`
 `;
 
 export const Content = styled.p`
+  font-size: 1rem;
+  line-height: 1.3em;
   color: ${(props) => props.theme.colors.primaryColor};
-  font-size: 1.05rem;
-  line-height: 1.6em;
+
+  ${(props) => props.theme.media.tablet} {
+    font-size: 1.05rem;
+    line-height: 1.6em;
+  }
 `;

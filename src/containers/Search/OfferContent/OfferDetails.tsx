@@ -31,7 +31,7 @@ const OfferDetails = () => {
   return (
     <OfferDetailsWrapper technology={data.technology}>
       <Header>
-        <OfferTitle>Frontend Developer</OfferTitle>
+        <OfferTitle>{data.title}</OfferTitle>
         <OfferPrice>
           {data.priceMin} - {data.priceMax} PLN
         </OfferPrice>
@@ -43,20 +43,26 @@ const OfferDetails = () => {
         <OfferDate>{moment(data.createdAt).format("LLL")}</OfferDate>
       </Middle>
       <Hr />
-      <SectionTitle>{t("Search.OfferDetails.mustHaveTitle")}</SectionTitle>
-      <OfferTags>
-        {data.mustHave.map((tagName) => (
-          <OfferTag key={tagName}>{tagName}</OfferTag>
-        ))}
-      </OfferTags>
-      <SectionTitle>{t("Search.OfferDetails.niceToHaveTitle")}</SectionTitle>
-      <OfferTags>
-        {data.niceToHave.map((tagName) => (
-          <OfferTag key={tagName}>{tagName}</OfferTag>
-        ))}
-      </OfferTags>
-      <SectionTitle>{t("Search.OfferDetails.description")}</SectionTitle>
-      <Content>{data.description}</Content>
+      <div>
+        <SectionTitle>{t("Search.OfferDetails.mustHaveTitle")}</SectionTitle>
+        <OfferTags>
+          {data.mustHave.map((tagName) => (
+            <OfferTag key={tagName}>{tagName}</OfferTag>
+          ))}
+        </OfferTags>
+      </div>
+      <div>
+        <SectionTitle>{t("Search.OfferDetails.niceToHaveTitle")}</SectionTitle>
+        <OfferTags>
+          {data.niceToHave.map((tagName) => (
+            <OfferTag key={tagName}>{tagName}</OfferTag>
+          ))}
+        </OfferTags>
+      </div>
+      <div>
+        <SectionTitle>{t("Search.OfferDetails.description")}</SectionTitle>
+        <Content>{data.description}</Content>
+      </div>
     </OfferDetailsWrapper>
   );
 };
