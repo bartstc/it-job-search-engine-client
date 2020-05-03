@@ -1,7 +1,9 @@
-import React from "react";
+import React, { Suspense } from "react";
 import { Route } from "react-router-dom";
 
 import { OfferContentWrapper } from "./OfferContent.styles";
+
+import { FetchingSpinner } from "components/Spinners/FetchingSpinner";
 
 import { Offers } from "./Offers";
 import { OfferDetails } from "./OfferDetails";
@@ -9,8 +11,10 @@ import { OfferDetails } from "./OfferDetails";
 const OfferContent = () => {
   return (
     <OfferContentWrapper>
-      <Route exact path="/" component={Offers} />
-      <Route exact path="/:offerId" component={OfferDetails} />
+      <Suspense fallback={<FetchingSpinner />}>
+        <Route exact path="/" component={Offers} />
+        <Route exact path="/:offerId" component={OfferDetails} />
+      </Suspense>
     </OfferContentWrapper>
   );
 };

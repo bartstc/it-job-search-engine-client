@@ -28,6 +28,11 @@
       "salary": "Salary",
       "experience": "Exp. level",
       "technology": "Technology"
+    },
+    "OfferDetails": {
+      "mustHaveTitle": "Must have",
+      "niceToHaveTitle": "Nice to have",
+      "description": "Offer's description"
     }
   },
   "Auth": {

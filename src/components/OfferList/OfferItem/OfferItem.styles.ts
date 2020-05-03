@@ -16,7 +16,7 @@ export const OfferItemWrapper = styled.li<OfferItemWrapperProps>`
   justify-content: space-between;
   //border-radius: 5px;
   position: relative;
-  margin-bottom: 1em;
+  margin-bottom: .6em;
   padding: 0.45em 0.45em 0.45em 1.3em;
   box-shadow: 1px 2px 3px -1px ${props => props.theme.colors.grayColor};
   background: ${props => props.theme.colors.secondaryBgColor};
@@ -123,7 +123,7 @@ export const OfferItemTags = styled.ul`
   ${props => props.theme.media.tablet} {
     display: flex;
     flex-wrap: wrap;
-    margin-top: 1em;
+    margin-top: .6em;
   }
 `;
 
@@ -131,7 +131,7 @@ export const OfferItemTag = styled.li`
   font-size: 0.67rem;
   background: ${props => props.theme.colors.secondaryColor};
   border-radius: 10px;
-  padding: 0.2em 1.1em;
+  padding: 0.25em 1.1em;
   margin-right: 1.4em;
   margin-bottom: 0.7em;
   line-height: 16px;

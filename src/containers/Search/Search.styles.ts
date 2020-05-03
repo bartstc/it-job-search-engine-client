@@ -25,6 +25,7 @@ export const MapContainer = styled.div`
   width: 100%;
   height: 100%;
   display: none;
+  padding-left: .4em;
 
   ${props => props.theme.media.laptop} {
     display: block;

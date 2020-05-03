@@ -28,6 +28,11 @@
       "salary": "Pensja",
       "experience": "Poziom dośw.",
       "technology": "Technologie"
+    },
+    "OfferDetails": {
+      "mustHaveTitle": "Wymagane umiejętności",
+      "niceToHaveTitle": "Docenimy",
+      "description": "Szczegóły oferty"
     }
   },
   "Auth": {
