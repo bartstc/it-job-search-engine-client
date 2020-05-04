@@ -1,7 +1,8 @@
 import { useSuspense } from "components/Suspense";
 
 import { getOffers } from "../api";
+import {Filters} from "../types/Filters";
 
-export const useOffers = () => {
-  return useSuspense(["offers"], getOffers);
+export const useOffers = (filters: Filters) => {
+  return useSuspense(["offers", filters], getOffers);
 };

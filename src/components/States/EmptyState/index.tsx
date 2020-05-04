@@ -13,12 +13,13 @@ type Props = {
 const EmptyState = ({
   id,
   title = "States.EmptyState.title",
-  subtitle = "States.EmptyState.subtitle"
+  subtitle = "States.EmptyState.subtitle",
 }: Props) => {
   const { t } = useTranslation();
 
   return (
     <StateWrapper id={id} data-testid={id}>
+      <i className="fas fa-search" />
       <H3>{t(title)}</H3>
       <Paragraph>{t(subtitle)}</Paragraph>
     </StateWrapper>

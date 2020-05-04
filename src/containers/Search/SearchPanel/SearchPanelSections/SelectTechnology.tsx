@@ -1,4 +1,4 @@
-import React, { useState, ChangeEvent } from "react";
+import React, { ChangeEvent } from "react";
 
 import {
   SelectWrapper,
@@ -6,18 +6,23 @@ import {
   RadioInput,
   LabelWrapper,
   RadioLabel,
-  Desc
+  Desc,
 } from "./SelectTechnology.styles";
 
 import { technologyItems } from "modules/offers/constants/technologyItems";
+import { useFiltersConsumer } from "modules/offers/contexts/FiltersContext";
+import { Technology } from "modules/offers/types/Technology";
 
 import { Icon } from "components/Icon";
 
 const SelectTechnology = () => {
-  const [technology, setTechnology] = useState("all");
+  const {
+    setFilters,
+    filters: { technology },
+  } = useFiltersConsumer();
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setTechnology(e.currentTarget.value);
+    setFilters({ technology: e.currentTarget.value as Technology });
   };
 
   return (

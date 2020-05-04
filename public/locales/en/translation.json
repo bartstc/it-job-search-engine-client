@@ -20,6 +20,10 @@
     "ErrorState": {
       "title": "Error",
       "subtitle": "Something goes wrong. Contact as: 333 444 555"
+    },
+    "EmptyState": {
+      "title": "No results found",
+      "subtitle": "Please try again later"
     }
   },
   "Search": {

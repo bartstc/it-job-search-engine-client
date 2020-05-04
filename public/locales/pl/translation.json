@@ -20,6 +20,10 @@
     "ErrorState": {
       "title": "Błąd",
       "subtitle": "Coś poszło nie tak. Skontaktuj się z nami: 333 444 555"
+    },
+    "EmptyState": {
+      "title": "Brak wyników",
+      "subtitle": "Spróbuj ponownie później"
     }
   },
   "Search": {

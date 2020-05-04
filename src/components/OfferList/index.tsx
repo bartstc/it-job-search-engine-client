@@ -4,6 +4,7 @@ import { OfferListWrapper } from "./OfferList.styles";
 
 import { Offer } from "modules/offers/types/Offer";
 
+import { EmptyState } from "../States/EmptyState";
 import { OfferItem } from "./OfferItem";
 
 export type OfferListProps = {
@@ -11,9 +12,13 @@ export type OfferListProps = {
 };
 
 export const OfferList = ({ offers }: OfferListProps) => {
+  if (offers.length === 0) {
+    return <EmptyState />;
+  }
+
   return (
     <OfferListWrapper>
-      {offers.map(offer => (
+      {offers.map((offer) => (
         <OfferItem key={offer.offerId} offer={offer} />
       ))}
     </OfferListWrapper>
