@@ -364,3 +364,27 @@ a {
 ul {
   list-style: none;
 }
+
+.page {
+  height: 100%;
+  position: fixed;
+  top: 0;
+  transition: opacity 0.35s ease-in-out;
+  overflow-y: scroll;
+}
+
+.page::-webkit-scrollbar {
+  width: 0 !important;
+}
+
+.page-enter {
+  opacity: 0;
+}
+
+.page-enter-active {
+  opacity: 1;
+}
+
+.page-exit-active {
+  opacity: 0;
+}

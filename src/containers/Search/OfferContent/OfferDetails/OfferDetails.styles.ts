@@ -4,13 +4,14 @@ import { Theme } from "styles/theme";
 
 import { Technology } from "modules/offers/types/Technology";
 import { technologyItems } from "modules/offers/constants/technologyItems";
+import { Link } from "react-router-dom";
 
 type OfferDetailsWrapperProps = {
   technology: Technology;
   theme: Theme;
 };
 
-export const OfferDetailsWrapper = styled.li<OfferDetailsWrapperProps>`
+export const OfferDetailsWrapper = styled.div<OfferDetailsWrapperProps>`
   width: 100%;
   height: 98.5%;
   display: flex;
@@ -18,7 +19,7 @@ export const OfferDetailsWrapper = styled.li<OfferDetailsWrapperProps>`
   justify-content: space-between;
   position: relative;
   margin-bottom: 0.6em;
-  padding: 1em 0.45em 1em 1.3em;
+  padding: 1.9em 0.45em 1em 1.3em;
   box-shadow: 1px 2px 3px -1px ${(props) => props.theme.colors.grayColor};
   background: ${(props) => props.theme.colors.secondaryBgColor};
   overflow-y: scroll;
@@ -55,7 +56,7 @@ export const OfferDetailsWrapper = styled.li<OfferDetailsWrapperProps>`
 
   ${(props) => props.theme.media.tablet} {
     display: block;
-    padding: 1.45em 2em 1.4em 3em;
+    padding: 2.6em 2em 1.4em 3em;
   }
 `;
 
@@ -91,8 +92,8 @@ export const OfferPrice = styled.p`
   font-weight: ${(props) => props.theme.fontWeight.regular};
 
   ${(props) => props.theme.media.tablet} {
-    font-size: 1.3rem;
-    line-height: 1.7em;
+    font-size: 1.2rem;
+    line-height: 1.5em;
     flex: 0.3;
     text-align: end;
   }
@@ -107,7 +108,7 @@ export const Middle = styled.div`
 
   ${(props) => props.theme.media.tablet} {
     position: relative;
-    bottom: .8em;
+    bottom: 0.8em;
     right: auto;
     display: flex;
     align-items: center;
@@ -129,7 +130,7 @@ export const OfferMeta = styled.p`
 export const OfferDate = styled.p`
   font-size: 0.9rem;
   color: ${(props) => props.theme.colors.primaryColor};
-  margin-top: .25em;
+  margin-top: 0.25em;
 
   b {
     font-weight: ${(props) => props.theme.fontWeight.semiBold};
@@ -194,5 +195,30 @@ export const Content = styled.p`
   ${(props) => props.theme.media.tablet} {
     font-size: 1.05rem;
     line-height: 1.6em;
+  }
+`;
+
+export const GoBackLink = styled(Link)`
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  color: ${(props) => props.theme.colors.primaryBgColor};
+  background: ${(props) => props.theme.colors.primaryColor};
+  width: 35px;
+  height: 35px;
+  border-radius: 4px;
+  font-size: 1.65rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: .25;
+  transition: opacity .15s ease-in-out;
+  
+  &:hover {
+  opacity: .45;
+  }
+  
+  ${(props) => props.theme.media.tablet} {
+    right: 30px;
   }
 `;

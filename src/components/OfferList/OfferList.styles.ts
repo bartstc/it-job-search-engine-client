@@ -2,15 +2,11 @@ import styled from "styled-components";
 
 export const OfferListWrapper = styled.ul`
   width: 100%;
-  max-width: 540px;
-  margin: 0 auto;
   height: 100%;
   overflow-y: scroll;
-  padding-right: .6em;
-  padding-bottom: 1em;
+  padding-right: .5em;
 
   ${(props) => props.theme.media.tablet} {
-    max-width: 760px;
   }
 
   ${(props) => props.theme.media.laptop} {

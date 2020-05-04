@@ -18,6 +18,7 @@ import {
   OfferTag,
   OfferTags,
   Content,
+  GoBackLink,
 } from "./OfferDetails.styles";
 
 const OfferDetails = () => {
@@ -30,6 +31,9 @@ const OfferDetails = () => {
 
   return (
     <OfferDetailsWrapper technology={data.technology}>
+      <GoBackLink to="/">
+        <i className="fas fa-chevron-left" />
+      </GoBackLink>
       <Header>
         <OfferTitle>{data.title}</OfferTitle>
         <OfferPrice>

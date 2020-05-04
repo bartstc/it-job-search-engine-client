@@ -113,6 +113,11 @@ export const OfferItemMeta = styled.p`
 
 export const OfferItemDate = styled.p`
   font-size: 0.9rem;
+  display: none;
+  
+  ${props => props.theme.media.mobileL} {
+    display: block;
+  }
 `;
 
 export const OfferItemTags = styled.ul`
