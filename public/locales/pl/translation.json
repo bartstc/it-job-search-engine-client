@@ -32,7 +32,9 @@
     "OfferDetails": {
       "mustHaveTitle": "Wymagane umiejętności",
       "niceToHaveTitle": "Docenimy",
-      "description": "Szczegóły oferty"
+      "description": "Szczegóły oferty",
+      "employmentTypeLabel": "Typ zatrudnienia",
+      "levelLabel": "Poziom doświadczenia"
     }
   },
   "Auth": {
@@ -96,6 +98,20 @@
     "wrongCredentialsProvided": "Wprowadzono niepoprawne dane",
     "password": {
       "doesntMeetCriteriaRequired8Chars": "Wprowadzono niepoprawne dane"
+    }
+  },
+  "modules": {
+    "employmentType": {
+      "B2B": "B2B",
+      "contract_of_employment": "Umowa o pracę",
+      "contract_of_mandate": "Umowa zlecenie",
+      "contract_work": "Umowa o dzieło"
+    },
+    "level": {
+      "trainee": "Stażysta",
+      "regular": "Regular",
+      "junior": "Junior",
+      "senior": "Senior"
     }
   }
 }

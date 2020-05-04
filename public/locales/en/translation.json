@@ -32,7 +32,9 @@
     "OfferDetails": {
       "mustHaveTitle": "Must have",
       "niceToHaveTitle": "Nice to have",
-      "description": "Offer's description"
+      "description": "Offer's description",
+      "employmentTypeLabel": "Employment type",
+      "levelLabel": "Experience"
     }
   },
   "Auth": {
@@ -96,6 +98,20 @@
     "wrongCredentialsProvided": "Wrong credentials provided",
     "password": {
       "doesntMeetCriteriaRequired8Chars": "Wrong credentials provided"
+    }
+  },
+  "modules": {
+    "employmentType": {
+      "B2B": "B2B",
+      "contract_of_employment": "Contract of employment",
+      "contract_of_mandate": "Contract of mandate",
+      "contract_work": "Contract work"
+    },
+    "level": {
+      "trainee": "Trainee",
+      "regular": "Regular",
+      "junior": "Junior",
+      "senior": "Senior"
     }
   }
 }

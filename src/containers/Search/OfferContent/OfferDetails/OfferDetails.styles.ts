@@ -77,7 +77,7 @@ export const OfferTitle = styled.h2`
   margin-bottom: 0.35em;
 
   ${(props) => props.theme.media.tablet} {
-    margin-bottom: 0.3em;
+    margin-bottom: 0.6em;
     font-size: 1.9rem;
     line-height: 1.25em;
     flex: 0.7;
@@ -107,7 +107,7 @@ export const Middle = styled.div`
 
   ${(props) => props.theme.media.tablet} {
     position: relative;
-    bottom: auto;
+    bottom: .8em;
     right: auto;
     display: flex;
     align-items: center;
@@ -128,6 +128,12 @@ export const OfferMeta = styled.p`
 
 export const OfferDate = styled.p`
   font-size: 0.9rem;
+  color: ${(props) => props.theme.colors.primaryColor};
+  margin-top: .25em;
+
+  b {
+    font-weight: ${(props) => props.theme.fontWeight.semiBold};
+  }
 `;
 
 export const Hr = styled.div`
@@ -163,7 +169,7 @@ export const OfferTags = styled.ul`
   color: ${(props) => props.theme.colors.secondaryBgColor};
   display: flex;
   flex-wrap: wrap;
-  
+
   ${(props) => props.theme.media.tablet} {
     display: flex;
     flex-wrap: wrap;

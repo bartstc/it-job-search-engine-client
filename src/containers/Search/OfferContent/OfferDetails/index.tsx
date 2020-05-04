@@ -1,6 +1,7 @@
 import React from "react";
 import useRouter from "use-react-router";
 import moment from "moment";
+import { useTranslation } from "react-i18next";
 
 import { useOffer } from "modules/offers/hooks";
 
@@ -18,7 +19,6 @@ import {
   OfferTags,
   Content,
 } from "./OfferDetails.styles";
-import { useTranslation } from "react-i18next";
 
 const OfferDetails = () => {
   const {
@@ -42,23 +42,39 @@ const OfferDetails = () => {
         </OfferMeta>
         <OfferDate>{moment(data.createdAt).format("LLL")}</OfferDate>
       </Middle>
+      <OfferDate>
+        {t("Search.OfferDetails.employmentTypeLabel")}
+        {": "}
+        <b>{t(`modules.employmentType.${data.employmentType}`)}</b>
+      </OfferDate>
+      <OfferDate>
+        {t("Search.OfferDetails.levelLabel")}
+        {": "}
+        <b>{t(`modules.level.${data.level}`)}</b>
+      </OfferDate>
       <Hr />
-      <div>
-        <SectionTitle>{t("Search.OfferDetails.mustHaveTitle")}</SectionTitle>
-        <OfferTags>
-          {data.mustHave.map((tagName) => (
-            <OfferTag key={tagName}>{tagName}</OfferTag>
-          ))}
-        </OfferTags>
-      </div>
-      <div>
-        <SectionTitle>{t("Search.OfferDetails.niceToHaveTitle")}</SectionTitle>
-        <OfferTags>
-          {data.niceToHave.map((tagName) => (
-            <OfferTag key={tagName}>{tagName}</OfferTag>
-          ))}
-        </OfferTags>
-      </div>
+      {data.mustHave.length > 0 && (
+        <div>
+          <SectionTitle>{t("Search.OfferDetails.mustHaveTitle")}</SectionTitle>
+          <OfferTags>
+            {data.mustHave.map((tagName) => (
+              <OfferTag key={tagName}>{tagName}</OfferTag>
+            ))}
+          </OfferTags>
+        </div>
+      )}
+      {data.niceToHave.length > 0 && (
+        <div>
+          <SectionTitle>
+            {t("Search.OfferDetails.niceToHaveTitle")}
+          </SectionTitle>
+          <OfferTags>
+            {data.niceToHave.map((tagName) => (
+              <OfferTag key={tagName}>{tagName}</OfferTag>
+            ))}
+          </OfferTags>
+        </div>
+      )}
       <div>
         <SectionTitle>{t("Search.OfferDetails.description")}</SectionTitle>
         <Content>{data.description}</Content>

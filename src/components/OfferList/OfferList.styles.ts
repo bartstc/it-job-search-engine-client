@@ -7,6 +7,7 @@ export const OfferListWrapper = styled.ul`
   height: 100%;
   overflow-y: scroll;
   padding-right: .6em;
+  padding-bottom: 1em;
 
   ${(props) => props.theme.media.tablet} {
     max-width: 760px;
