@@ -16,6 +16,7 @@ const Search = () => {
   // todo: refactor, prepare abstraction??, singular states
   const [filters, setFilters] = useState<Filters>({
     technology: Technology.All,
+    offset: 0,
   });
 
   return (
