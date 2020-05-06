@@ -29,10 +29,9 @@
   "Search": {
     "filterButtons": {
       "location": "Lokalizacja",
-      "salary": "Pensja",
-      "experience": "Poziom dośw.",
+      "salary": "Wynagrodzenie",
       "technology": "Technologie",
-      "employmentType": "Forma pracy"
+      "more": "Więcej filtrów"
     },
     "OfferDetails": {
       "mustHaveTitle": "Wymagane umiejętności",

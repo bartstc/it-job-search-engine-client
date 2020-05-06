@@ -5,7 +5,7 @@ export const SearchPanelWrapper = styled.div`
   max-width: 540px;
   margin: 0 auto;
   padding-top: 1em;
-  height: 240px;
+  height: 180px;
 
   ${props => props.theme.media.laptop} {
     height: 140px;

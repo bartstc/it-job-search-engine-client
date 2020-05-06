@@ -12,7 +12,7 @@ export const SearchWrapper = styled.div`
 
 export const SearchOverview = styled.div`
   width: 100%;
-  height: calc(100% - 240px);
+  height: calc(100% - 180px);
 
   ${props => props.theme.media.laptop} {
     display: flex;

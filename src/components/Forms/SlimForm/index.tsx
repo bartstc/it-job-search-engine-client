@@ -33,6 +33,7 @@ const SlimForm = ({
         isSubmitting={isSubmitting}
         type="submit"
         id={`${kebabCase(formTitle)}-submit-btn`}
+        options={["expanded"]}
       >
         {submitTitle}
       </SpinnerButton>

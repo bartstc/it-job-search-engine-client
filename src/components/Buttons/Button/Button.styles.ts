@@ -1,7 +1,6 @@
 import styled from "styled-components";
 
 export const StyledButton = styled.button`
-  width: 100%;
   background: ${(props) => props.theme.colors.primaryColor};
   color: ${(props) => props.theme.colors.primaryBgColor};
   font-weight: ${(props) => props.theme.fontWeight.semiBold};
@@ -11,9 +10,14 @@ export const StyledButton = styled.button`
   cursor: pointer;
   transition: all 0.15s ease-in-out;
   border: none;
+  display: inline-block;
 
   ${(props) => props.theme.media.laptop} {
     min-width: 150px;
+  }
+  
+  &.expanded {
+    width: 100%;
   }
 
   &.rectangular {

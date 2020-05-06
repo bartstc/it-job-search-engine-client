@@ -13,16 +13,12 @@ export const ButtonsWrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-
-    i {
-      margin-left: 0.45em;
-    }
   }
 
   ${props => props.theme.media.laptop} {
     display: flex;
     align-items: center;
-    max-width: inherit;
+    max-width: none;
     margin: 0;
 
     button {
