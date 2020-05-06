@@ -30,8 +30,9 @@
     "filterButtons": {
       "location": "Location",
       "salary": "Salary",
-      "experience": "Exp. level",
-      "technology": "Technology"
+      "experience": "Seniority",
+      "technology": "Technology",
+      "employmentType": "Employment type"
     },
     "OfferDetails": {
       "mustHaveTitle": "Must have",

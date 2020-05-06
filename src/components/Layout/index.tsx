@@ -4,7 +4,8 @@ import { StyledMain } from "./Layout.styles";
 
 import { useSideDrawer } from "hooks/useSideDrawer";
 
-import { SideDrawer, Header, Backdrop, Notification } from "./LayoutElements";
+import { Backdrop } from "../Backdrop";
+import { SideDrawer, Header, Notification } from "./LayoutElements";
 
 type Props = {
   children: ReactNode;

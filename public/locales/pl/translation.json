@@ -31,7 +31,8 @@
       "location": "Lokalizacja",
       "salary": "Pensja",
       "experience": "Poziom dośw.",
-      "technology": "Technologie"
+      "technology": "Technologie",
+      "employmentType": "Forma pracy"
     },
     "OfferDetails": {
       "mustHaveTitle": "Wymagane umiejętności",

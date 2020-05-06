@@ -1,4 +1,5 @@
 import React, { ChangeEvent } from "react";
+import useRouter from "use-react-router";
 
 import {
   SelectWrapper,
@@ -14,7 +15,6 @@ import { useFiltersConsumer } from "modules/offers/contexts/FiltersContext";
 import { Technology } from "modules/offers/types/Technology";
 
 import { Icon } from "components/Icon";
-import useRouter from "use-react-router";
 
 const SelectTechnology = () => {
   const { history, location } = useRouter();

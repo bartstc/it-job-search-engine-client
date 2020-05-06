@@ -10,6 +10,8 @@ export const fakeOffer: Offer = {
   mustHave: ["typescript", "nestjs"],
   priceMax: 5000,
   priceMin: 3000,
+  latitude: 52.9234,
+  longitude: 20.4433,
   streetName: "Groove Street",
   cityName: "New York",
   employmentType: EmploymentType.B2B,

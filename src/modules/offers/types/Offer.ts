@@ -16,6 +16,8 @@ export interface Offer {
   streetName: string;
   priceMin: number;
   priceMax: number;
+  latitude: number;
+  longitude: number;
   mustHave: string[];
   niceToHave: string[];
   createdAt: Date;

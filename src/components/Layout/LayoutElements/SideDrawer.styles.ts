@@ -68,14 +68,6 @@ export const Link = styled(NavLink)`
   }
 `;
 
-export const Switches = styled.div`
-  display: block;
-
-  ${props => props.theme.media.laptop} {
-    display: none;
-  }
-`;
-
 export const TranslationButtons = styled.div`
   position: absolute;
   top: 18px;

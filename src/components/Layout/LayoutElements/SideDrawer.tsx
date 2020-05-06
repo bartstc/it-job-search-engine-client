@@ -14,7 +14,6 @@ import {
   Link,
   Links,
   SideDrawerWrapper,
-  Switches,
   TranslateButton,
   TranslationButtons,
 } from "./SideDrawer.styles";
@@ -114,7 +113,6 @@ const SideDrawer = ({ toggle, handleClose }: Props) => {
         )}
         {renderAuthLinks()}
       </Links>
-      <Switches>
         <SwitchInput
           checked={theme.name === "dark"}
           onChange={toggleTheme}
@@ -123,7 +121,6 @@ const SideDrawer = ({ toggle, handleClose }: Props) => {
           leftIcon={<i className="fas fa-sun" />}
           rightIcon={<i className="fas fa-moon" />}
         />
-      </Switches>
     </SideDrawerWrapper>
   );
 };

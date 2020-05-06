@@ -2,9 +2,9 @@ import styled from "styled-components";
 
 export const StyledButton = styled.button`
   width: 100%;
-  background: ${props => props.theme.colors.primaryColor};
-  color: ${props => props.theme.colors.primaryBgColor};
-  font-weight: ${props => props.theme.fontWeight.light};
+  background: ${(props) => props.theme.colors.primaryColor};
+  color: ${(props) => props.theme.colors.primaryBgColor};
+  font-weight: ${(props) => props.theme.fontWeight.semiBold};
   border-radius: 20px;
   padding: 0.95em 1.2em;
   font-size: 0.8rem;
@@ -12,26 +12,38 @@ export const StyledButton = styled.button`
   transition: all 0.15s ease-in-out;
   border: none;
 
-  ${props => props.theme.media.laptop} {
+  ${(props) => props.theme.media.laptop} {
     min-width: 150px;
   }
 
-  &.accent {
-    background: ${props => props.theme.colors.secondaryColor};
+  &.rectangular {
+    border-radius: 0;
+  }
+
+  &.accent-filled {
+    background: ${(props) => props.theme.colors.secondaryColor};
+    border: 3px solid ${(props) => props.theme.colors.secondaryColor};
     color: #ffffff;
   }
 
-  &.accent.mq-laptop-ignore {
-    background: ${props => props.theme.colors.secondaryColor};
-    color: #ffffff;
+  &.accent-bordered {
+    background: transparent;
+    border: 3px solid ${(props) => props.theme.colors.secondaryColor};
+    color: ${(props) => props.theme.colors.primaryColor};
 
-    ${props => props.theme.media.laptop} {
+    i {
+      color: ${(props) => props.theme.colors.primaryColor};
+    }
+  }
+
+  &.mq-laptop-ignore {
+    ${(props) => props.theme.media.laptop} {
       display: none;
     }
   }
 
   &:disabled {
-    background: ${props => props.theme.colors.grayColor};
+    background: ${(props) => props.theme.colors.grayColor};
     opacity: 0.55;
     cursor: not-allowed;
   }
