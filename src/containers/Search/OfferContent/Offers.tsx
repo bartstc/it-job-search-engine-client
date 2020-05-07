@@ -1,13 +1,14 @@
 import React from "react";
 
 import { useOffers } from "modules/offers/hooks";
-import { useFiltersConsumer } from "modules/offers/contexts/FiltersContext";
+import { DEFAULT_PARAMS } from "modules/offers/constants/defaultParams";
 
 import { OfferList } from "components/OfferList";
+import { useParamsBag } from "components/Params";
 
 const Offers = () => {
-  const { filters } = useFiltersConsumer();
-  const { data } = useOffers(filters);
+  const { params } = useParamsBag(DEFAULT_PARAMS);
+  const { data } = useOffers(params);
 
   return <OfferList offers={data} />;
 };

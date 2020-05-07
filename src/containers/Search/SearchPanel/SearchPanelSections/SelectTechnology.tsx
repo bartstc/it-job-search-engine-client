@@ -11,17 +11,22 @@ import {
 } from "./SelectTechnology.styles";
 
 import { technologyItems } from "modules/offers/constants/technologyItems";
-import { useFiltersConsumer } from "modules/offers/contexts/FiltersContext";
+import { DEFAULT_PARAMS } from "modules/offers/constants/defaultParams";
 import { Technology } from "modules/offers/types/Technology";
 
 import { Icon } from "components/Icon";
+import { useFilters } from "components/Filters";
 
 const SelectTechnology = () => {
   const { history, location } = useRouter();
-  const { setFilters, filters } = useFiltersConsumer();
+  const [techFilter, setTechFilter] = useFilters(
+    DEFAULT_PARAMS,
+    "technology",
+    200
+  );
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setFilters({ ...filters, technology: e.currentTarget.value as Technology });
+    setTechFilter(e.currentTarget.value);
 
     if (location.pathname !== "/") {
       history.push("/");
@@ -40,11 +45,11 @@ const SelectTechnology = () => {
                 type="radio"
                 name={name}
                 value={value}
-                checked={filters.technology === value}
+                checked={techFilter === value}
                 onChange={onChange}
               />
               <LabelWrapper
-                allChecked={filters.technology === "all"}
+                allChecked={techFilter === Technology.All}
                 color={color}
               >
                 <RadioLabel htmlFor={name}>

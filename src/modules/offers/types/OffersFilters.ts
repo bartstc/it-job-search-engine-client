@@ -1,6 +1,5 @@
 import { Technology } from "./Technology";
 
-export interface Filters {
+export interface OffersFilters {
   technology: Technology;
-  offset?: number;
 }

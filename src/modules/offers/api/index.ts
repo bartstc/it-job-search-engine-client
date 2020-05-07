@@ -1,11 +1,11 @@
 import { client } from "utils/ajax/client";
 
 import { Offer } from "../types/Offer";
-import { Filters } from "../types/Filters";
+import { OffersFilters } from "../types/OffersFilters";
 
-export const getOffers = (_: string,{ technology, offset }: Filters) =>
+export const getOffers = (_: string,{ technology }: OffersFilters) =>
   client<Offer[]>({
-    url: `offers?technology=${technology}&offset=${offset}`,
+    url: `offers?technology=${technology}`,
   });
 
 export const getOffer = (_: string, offerId: string) =>
