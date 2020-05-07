@@ -3,7 +3,8 @@ import styled from "styled-components";
 export const Loader = styled.div`
   position: absolute;
   left: 50%;
-  transform: translate(-50%, 0);
+  top: 50%;
+  transform: translate(-50%, -50%);
 
   .lds-ripple {
     display: inline-block;

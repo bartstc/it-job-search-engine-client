@@ -6,6 +6,7 @@ import { GlobalSpinner } from "components/Spinners";
 import { NotificationState } from "modules/notification/types/NotificationState";
 import { NotificationProvider } from "modules/notification/contexts/NotificationProvider";
 import { useAuthState } from "modules/users/contexts/authContext";
+import { ParamsProvider } from "../modules/global/ParamsContext";
 
 const UnauthApp = lazy(() => import("./UnauthApp"));
 const AuthApp = lazy(() => import("./AuthApp"));
@@ -16,19 +17,23 @@ const App = () => {
       active: false,
     }
   );
+  const [params, setParams] = useState<{ [key: string]: any }>({});
+
   const { isAuth } = useAuthState();
 
   return (
     <ErrorBoundary>
-      <Suspense fallback={<GlobalSpinner />}>
+      <ParamsProvider data={{ params, setParams }}>
         <NotificationProvider
           data={{ notificationState, setNotificationState }}
         >
-          {isAuth === null && <GlobalSpinner />}
-          {isAuth === false && <UnauthApp />}
-          {isAuth && <AuthApp />}
+          <Suspense fallback={<GlobalSpinner />}>
+            {isAuth === null && <GlobalSpinner />}
+            {isAuth === false && <UnauthApp />}
+            {isAuth && <AuthApp />}
+          </Suspense>
         </NotificationProvider>
-      </Suspense>
+      </ParamsProvider>
     </ErrorBoundary>
   );
 };

@@ -6,8 +6,14 @@ import { isEmpty, isEqual } from "lodash";
 import { mapParamsStringToNumber } from "utils";
 
 import { useGetDefaultParams } from "./useGetDefaultParams";
+import { useParamsConsumer } from "../../modules/global/ParamsContext";
 
 export const useCreateParams = <T = unknown>(defaultParams: T) => {
+  const {
+    setParams: setSharedParams,
+    params: sharedParams,
+  } = useParamsConsumer();
+
   const { getDefaultParamsFromUrl } = useGetDefaultParams<T>(defaultParams);
   const defaultParamsFromUrl = useMemo(() => getDefaultParamsFromUrl(), [
     getDefaultParamsFromUrl,
@@ -17,6 +23,11 @@ export const useCreateParams = <T = unknown>(defaultParams: T) => {
     location: { search, pathname },
     history,
   } = useRouter();
+
+  useEffect(() => {
+    setSharedParams({ ...sharedParams, [pathname]: defaultParamsFromUrl });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [defaultParamsFromUrl, pathname, setSharedParams]);
 
   const replaceWithParams = useCallback(
     (params: T) => {

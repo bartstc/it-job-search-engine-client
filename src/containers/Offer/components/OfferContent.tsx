@@ -19,9 +19,9 @@ import {
   OfferTags,
   Content,
   GoBackLink,
-} from "./OfferDetails.styles";
+} from "./OfferContent.styles";
 
-const OfferDetails = () => {
+const OfferContent = () => {
   const {
     match: { params },
   } = useRouter<{ offerId: string }>();
@@ -47,19 +47,19 @@ const OfferDetails = () => {
         <OfferDate>{moment(data.createdAt).format("LLL")}</OfferDate>
       </Middle>
       <OfferDate>
-        {t("Search.OfferDetails.employmentTypeLabel")}
+        {t("Search.Offer.employmentTypeLabel")}
         {": "}
         <b>{t(`modules.employmentType.${data.employmentType}`)}</b>
       </OfferDate>
       <OfferDate>
-        {t("Search.OfferDetails.levelLabel")}
+        {t("Search.Offer.levelLabel")}
         {": "}
         <b>{t(`modules.level.${data.level}`)}</b>
       </OfferDate>
       <Hr />
       {data.mustHave.length > 0 && (
         <div>
-          <SectionTitle>{t("Search.OfferDetails.mustHaveTitle")}</SectionTitle>
+          <SectionTitle>{t("Search.Offer.mustHaveTitle")}</SectionTitle>
           <OfferTags>
             {data.mustHave.map((tagName) => (
               <OfferTag key={tagName}>{tagName}</OfferTag>
@@ -70,7 +70,7 @@ const OfferDetails = () => {
       {data.niceToHave.length > 0 && (
         <div>
           <SectionTitle>
-            {t("Search.OfferDetails.niceToHaveTitle")}
+            {t("Search.Offer.niceToHaveTitle")}
           </SectionTitle>
           <OfferTags>
             {data.niceToHave.map((tagName) => (
@@ -80,11 +80,11 @@ const OfferDetails = () => {
         </div>
       )}
       <div>
-        <SectionTitle>{t("Search.OfferDetails.description")}</SectionTitle>
+        <SectionTitle>{t("Search.Offer.description")}</SectionTitle>
         <Content>{data.description}</Content>
       </div>
     </OfferDetailsWrapper>
   );
 };
 
-export { OfferDetails };
+export { OfferContent };

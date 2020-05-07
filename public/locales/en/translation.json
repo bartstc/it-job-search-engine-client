@@ -33,7 +33,7 @@
       "more": "More filters",
       "technology": "Technology"
     },
-    "OfferDetails": {
+    "Offer": {
       "mustHaveTitle": "Must have",
       "niceToHaveTitle": "Nice to have",
       "description": "Offer's description",

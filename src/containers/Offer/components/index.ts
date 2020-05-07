@@ -1,0 +1,1 @@
+export { OfferContent } from "./OfferContent";

@@ -26,11 +26,11 @@ const SelectTechnology = () => {
   );
 
   const onChange = (e: ChangeEvent<HTMLInputElement>) => {
-    setTechFilter(e.currentTarget.value);
-
     if (location.pathname !== "/") {
       history.push("/");
     }
+
+    setTechFilter(e.currentTarget.value);
   };
 
   return (

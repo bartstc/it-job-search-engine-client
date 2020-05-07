@@ -6,14 +6,18 @@ import { mapValues, pickBy } from "lodash";
 import { isEmpty } from "utils";
 
 import { useGetDefaultParams } from "./useGetDefaultParams";
+import { useSharedParams } from "./useSharedParams";
 
 export const useParamsBag = <T>(defaultParams: T) => {
   const { history } = useRouter();
+  const { sharedParams } = useSharedParams<T>();
 
   const { getDefaultParamsFromUrl } = useGetDefaultParams<T>(defaultParams);
   const defaultParamsFromUrl = useMemo(() => getDefaultParamsFromUrl(), [
     getDefaultParamsFromUrl,
   ]);
+
+  const params = sharedParams || defaultParamsFromUrl;
 
   const pushParams = useCallback(
     (qp: T) => {
@@ -22,7 +26,7 @@ export const useParamsBag = <T>(defaultParams: T) => {
         isEmpty(value) ? null : value
       );
       const filteredQueryParams = pickBy(
-        { ...defaultParamsFromUrl, ...markEmptyValues },
+        { ...params, ...markEmptyValues },
         (value: any) => !isEmpty(value)
       );
 
@@ -31,7 +35,7 @@ export const useParamsBag = <T>(defaultParams: T) => {
       });
       history.push(`?${queryParams}`);
     },
-    [history, defaultParamsFromUrl]
+    [history, params]
   );
 
   const setClearState = useCallback(

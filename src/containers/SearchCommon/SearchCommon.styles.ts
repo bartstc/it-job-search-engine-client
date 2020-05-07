@@ -25,7 +25,7 @@ export const MapContainer = styled.div`
   width: 100%;
   height: 100%;
   display: none;
-  padding-left: .4em;
+  margin-left: .35em;
 
   ${props => props.theme.media.laptop} {
     display: block;
@@ -38,5 +38,20 @@ export const MapContainer = styled.div`
   }
 
   ${props => props.theme.media.laptop} {
+  }
+`;
+
+export const OfferContentWrapper = styled.div`
+  width: 100%;
+  height: 100%;
+  position: relative;
+
+  ${(props) => props.theme.media.laptop} {
+    flex: 0.6;
+    padding: 0 0.15em 0 1.1em;
+  }
+
+  ${(props) => props.theme.media.laptopL} {
+    flex: 0.5;
   }
 `;
